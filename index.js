@@ -1,4 +1,3 @@
-
 const express = require('express');
 const cors = require('cors');
 const dotenv = require('dotenv').config();
@@ -19,9 +18,9 @@ app.get('/', (req, res) => {
 /* Insertamos nuevos clientes */
 app.post('/usuarios', async (req, res) => {
     console.log(req.body);
-    const { nombre, apellido, email, password } = req.body;
+    const { nombre, apellido, email, mensaje } = req.body;
 
-    console.log(`Mi nombre es ${nombre}, mi apellido es ${apellido}, mi email es ${email} y el password ${password}`);
+    console.log(`Mi nombre es ${nombre}, mi apellido es ${apellido}, mi email es ${email} y el mensaje ${mensaje}`);
 
        //4. si no Existe, creamos un nuevo usuario
     const nuevoUsuario = new Usuario(req.body);
@@ -87,7 +86,7 @@ app.put('/clientes/:id', async (req, res) => {
         nombre: req.body.nombre,
         apellido: req.body.apellido,
         email: req.body.email,
-        password: req.body.password
+        mensaje: req.body.mensaje
     }
 
     console.log(data);

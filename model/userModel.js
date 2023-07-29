@@ -15,7 +15,7 @@ const userSchema = new Schema({
         type: String, 
         required: true,
     },
-    password: {
+    mensaje: {
         type: String, 
         required: true
     },
